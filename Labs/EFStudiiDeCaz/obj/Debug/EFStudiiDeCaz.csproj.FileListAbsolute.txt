@@ -1,0 +1,11 @@
+E:\GITHUB\fii-tsp\Labs\EFStudiiDeCaz\bin\Debug\EFStudiiDeCaz.exe.config
+E:\GITHUB\fii-tsp\Labs\EFStudiiDeCaz\bin\Debug\EFStudiiDeCaz.exe
+E:\GITHUB\fii-tsp\Labs\EFStudiiDeCaz\bin\Debug\EFStudiiDeCaz.pdb
+E:\GITHUB\fii-tsp\Labs\EFStudiiDeCaz\bin\Debug\EntityFramework.dll
+E:\GITHUB\fii-tsp\Labs\EFStudiiDeCaz\bin\Debug\EntityFramework.SqlServer.dll
+E:\GITHUB\fii-tsp\Labs\EFStudiiDeCaz\bin\Debug\EntityFramework.xml
+E:\GITHUB\fii-tsp\Labs\EFStudiiDeCaz\bin\Debug\EntityFramework.SqlServer.xml
+E:\GITHUB\fii-tsp\Labs\EFStudiiDeCaz\obj\Debug\EFStudiiDeCaz.csprojAssemblyReference.cache
+E:\GITHUB\fii-tsp\Labs\EFStudiiDeCaz\obj\Debug\EFStudiiDeCaz.csproj.CopyComplete
+E:\GITHUB\fii-tsp\Labs\EFStudiiDeCaz\obj\Debug\EFStudiiDeCaz.exe
+E:\GITHUB\fii-tsp\Labs\EFStudiiDeCaz\obj\Debug\EFStudiiDeCaz.pdb
