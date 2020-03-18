@@ -9,10 +9,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace EFStudiiDeCaz.Model
 {
     [Table("Business", Schema = "BazaDeDate")]
-    public class Business {
-        [Key] [DatabaseGenerated(DatabaseGeneratedOption.Identity)] 
-        public int BusinessId { get; protected set; } 
-        public string Name { get; set; }
-        public string LicenseNumber { get; set; } 
+    public class ECommerce : Business
+    {
+        public string URL { get; set; }
     }
 }

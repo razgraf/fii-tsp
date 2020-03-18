@@ -52,13 +52,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmployeeContext.cs" />
     <Compile Include="ModelSelfReferences.cs" />
     <Compile Include="Model\Business.cs" />
+    <Compile Include="Model\ECommerce.cs" />
+    <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\Photograph.cs" />
     <Compile Include="Model\PhotographFullImage.cs" />
     <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\Retail.cs" />
     <Compile Include="Model\SelfReference.cs" />
     <Compile Include="PhotographContext.cs" />
+    <Compile Include="BusinessContext.cs" />
     <Compile Include="ProductContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

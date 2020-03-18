@@ -13,7 +13,61 @@ namespace EFStudiiDeCaz
         {
             //ProductDeploy();
             //PhotographDeploy();
+            //BusinessDeploy();
+            //EmployeeDeploy();
 
+        }
+
+        private void EmployeeDeploy()
+        {
+            using (var context = new EmployeeContext())
+            {
+                var fte = new Model.FullTimeEmployee { FirstName = "Jane", LastName = "Doe", Salary = 71500M };
+                context.Employees.Add(fte);
+                fte = new Model.FullTimeEmployee { FirstName = "John", LastName = "Smith", Salary = 62500M };
+                context.Employees.Add(fte);
+                var hourly = new Model.HourlyEmployee { FirstName = "Tom", LastName = "Jones", Wage = 8.75M }; context.Employees.Add(hourly); context.SaveChanges();
+            }
+            using (var context = new EmployeeContext())
+            {
+                Console.WriteLine("---All Employees ---");
+                foreach (var emp in context.Employees) { bool fullTime = emp is Model.HourlyEmployee ? false : true; Console.WriteLine("{0} {1} ({2})", emp.FirstName, emp.LastName, fullTime ? "Full Time" : "Hourly"); }
+                Console.WriteLine("---Full Time ---");
+                foreach (var fte in context.Employees.OfType<Model.FullTimeEmployee>()) { Console.WriteLine("{0} {1}", fte.FirstName, fte.LastName); }
+                Console.WriteLine("---Hourly ---");
+                foreach (var hourly in context.Employees.OfType<Model.HourlyEmployee>()) { Console.WriteLine("{0} {1}", hourly.FirstName, hourly.LastName); }
+            }
+        }
+
+        private void BusinessDeploy()
+        {
+            using (var context = new BusinessContext()){
+                var business = new Model.Business{ Name = "Corner Dry Cleaning", LicenseNumber = "100x1" };
+                context.Businesses.Add(business);
+                var retail = new Model.Retail { Name = "Shop and Save", LicenseNumber = "200C", Address = "101 Main", City = "Anytown", State = "TX", ZIPCode = "76106" };
+                context.Businesses.Add(retail); 
+                var web = new Model.ECommerce { Name = "BuyNow.com", LicenseNumber = "300AB", URL = "www.buynow.com" };
+                context.Businesses.Add(web); 
+                context.SaveChanges();
+            }
+            using (var context = new BusinessContext()){ Console.WriteLine("\n---All Businesses ---");
+                foreach (var b in context.Businesses) 
+                {
+
+                    Console.WriteLine("{0} (#{1})", b.Name, b.LicenseNumber);
+                }
+                Console.WriteLine("\n---Retail Businesses ---"); 
+                foreach (var r in context.Businesses.OfType<Model.Retail>()) 
+                {
+                    Console.WriteLine("{0} (#{1})", r.Name, r.LicenseNumber);
+                    Console.WriteLine("{0}", r.Address); 
+                    Console.WriteLine("{0}, {1} {2}", r.City, r.State, r.ZIPCode);
+                } Console.WriteLine("\n---eCommerce Businesses ---"); 
+                foreach (var e in context.Businesses.OfType<Model.ECommerce>())
+                {
+                    Console.WriteLine("{0} (#{1})", e.Name, e.LicenseNumber);
+                    Console.WriteLine("Online address is: {0}", e.URL); }
+            }
         }
 
         private void PhotographDeploy()
