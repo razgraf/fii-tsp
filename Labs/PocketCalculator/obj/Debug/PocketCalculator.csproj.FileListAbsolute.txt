@@ -1,0 +1,11 @@
+E:\GITHUB\fii-work\3-TSPDOTNET\PocketCalculator\bin\Debug\PocketCalculator.exe.config
+E:\GITHUB\fii-work\3-TSPDOTNET\PocketCalculator\bin\Debug\PocketCalculator.exe
+E:\GITHUB\fii-work\3-TSPDOTNET\PocketCalculator\bin\Debug\PocketCalculator.pdb
+E:\GITHUB\fii-work\3-TSPDOTNET\PocketCalculator\obj\Debug\PocketCalculator.csprojAssemblyReference.cache
+E:\GITHUB\fii-work\3-TSPDOTNET\PocketCalculator\obj\Debug\PocketCalculator.Form1.resources
+E:\GITHUB\fii-work\3-TSPDOTNET\PocketCalculator\obj\Debug\PocketCalculator.Properties.Resources.resources
+E:\GITHUB\fii-work\3-TSPDOTNET\PocketCalculator\obj\Debug\PocketCalculator.csproj.GenerateResource.cache
+E:\GITHUB\fii-work\3-TSPDOTNET\PocketCalculator\obj\Debug\PocketCalculator.exe
+E:\GITHUB\fii-work\3-TSPDOTNET\PocketCalculator\obj\Debug\PocketCalculator.pdb
+E:\GITHUB\fii-work\3-TSPDOTNET\PocketCalculator\bin\Debug\MathParser.dll
+E:\GITHUB\fii-work\3-TSPDOTNET\PocketCalculator\obj\Debug\PocketCalculator.csproj.CopyComplete

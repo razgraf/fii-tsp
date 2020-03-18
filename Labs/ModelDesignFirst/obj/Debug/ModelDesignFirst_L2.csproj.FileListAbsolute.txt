@@ -1,0 +1,11 @@
+E:\GITHUB\fii-work\3-TSPDOTNET\ModelDesignFirst_L2\bin\Debug\ModelDesignFirst_L2.exe.config
+E:\GITHUB\fii-work\3-TSPDOTNET\ModelDesignFirst_L2\bin\Debug\ModelDesignFirst_L2.exe
+E:\GITHUB\fii-work\3-TSPDOTNET\ModelDesignFirst_L2\bin\Debug\ModelDesignFirst_L2.pdb
+E:\GITHUB\fii-work\3-TSPDOTNET\ModelDesignFirst_L2\bin\Debug\EntityFramework.dll
+E:\GITHUB\fii-work\3-TSPDOTNET\ModelDesignFirst_L2\bin\Debug\EntityFramework.SqlServer.dll
+E:\GITHUB\fii-work\3-TSPDOTNET\ModelDesignFirst_L2\bin\Debug\EntityFramework.xml
+E:\GITHUB\fii-work\3-TSPDOTNET\ModelDesignFirst_L2\bin\Debug\EntityFramework.SqlServer.xml
+E:\GITHUB\fii-work\3-TSPDOTNET\ModelDesignFirst_L2\obj\Debug\ModelDesignFirst_L2.csprojAssemblyReference.cache
+E:\GITHUB\fii-work\3-TSPDOTNET\ModelDesignFirst_L2\obj\Debug\ModelDesignFirst_L2.csproj.CopyComplete
+E:\GITHUB\fii-work\3-TSPDOTNET\ModelDesignFirst_L2\obj\Debug\ModelDesignFirst_L2.exe
+E:\GITHUB\fii-work\3-TSPDOTNET\ModelDesignFirst_L2\obj\Debug\ModelDesignFirst_L2.pdb
