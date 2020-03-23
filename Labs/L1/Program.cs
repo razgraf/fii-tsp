@@ -8,12 +8,10 @@ namespace L1
 
         static void Main(string[] args)
         {
-            // Console.WriteLine("Hello World!");
-            // Console.WriteLine(iterativePrimeFinder(5000));
-            // Console.WriteLine(iterativePrimeFinderReverse(5000));
 
-            doThreding();
+            // doThreding();
             // doActions();
+            doBackgroundWork();
         }
 
 
@@ -40,6 +38,17 @@ namespace L1
         {
             var calculator = new Calculator();
             calculator.start();
+        }
+
+        /**
+       * BACKGOUND WORK
+       */
+
+        public static void doBackgroundWork()
+        {
+            var workers = new Workers();
+            workers.start();
+            Console.ReadKey();
         }
 
 
