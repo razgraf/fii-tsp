@@ -1,0 +1,11 @@
+C:\Users\Razvan\source\repos\WCFPostComment\bin\Debug\WCFPostComment.dll.config
+C:\Users\Razvan\source\repos\WCFPostComment\bin\Debug\WCFPostComment.dll
+C:\Users\Razvan\source\repos\WCFPostComment\bin\Debug\WCFPostComment.pdb
+C:\Users\Razvan\source\repos\WCFPostComment\bin\Debug\EntityFramework.dll
+C:\Users\Razvan\source\repos\WCFPostComment\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Razvan\source\repos\WCFPostComment\bin\Debug\EntityFramework.xml
+C:\Users\Razvan\source\repos\WCFPostComment\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Razvan\source\repos\WCFPostComment\obj\Debug\WCFPostComment.csprojAssemblyReference.cache
+C:\Users\Razvan\source\repos\WCFPostComment\obj\Debug\WCFPostComment.csproj.CopyComplete
+C:\Users\Razvan\source\repos\WCFPostComment\obj\Debug\WCFPostComment.dll
+C:\Users\Razvan\source\repos\WCFPostComment\obj\Debug\WCFPostComment.pdb
