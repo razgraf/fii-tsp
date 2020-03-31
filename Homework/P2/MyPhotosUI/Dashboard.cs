@@ -7,6 +7,7 @@ using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
 
+using MyPhotos.Model;
 
 
 namespace MyPhotosUI

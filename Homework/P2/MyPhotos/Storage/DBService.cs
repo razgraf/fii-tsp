@@ -17,7 +17,7 @@ namespace MyPhotos.Storage
         {
              this.Context = new Context();
 
-            if(!this.Context.FileDatas.Any())this.InitDb();
+             if(!this.Context.FileDatas.Any()) this.InitDb();
         }
 
         /**
