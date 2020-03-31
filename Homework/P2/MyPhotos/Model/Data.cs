@@ -3,19 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization;
 
 namespace MyPhotos.Model
 {
+    [DataContract(IsReference = true)]
     public class Data
     {
 
+        [DataMember]
         public Guid DataId { get; set; }
+        [DataMember]
         public string Label { get; set; }
+        [DataMember]
         public string Source { get; set; }
+        [DataMember]
         public string Type { get; set; }
+        [DataMember]
         public bool IsEditable { get; set; }
+        [DataMember]
         public bool IsSearchable { get; set; }
+        [DataMember]
         public DateTime CreatedAt { get; set; }
+        [DataMember]
 
         public ICollection<FileData> FileDatas { get; set; }
 

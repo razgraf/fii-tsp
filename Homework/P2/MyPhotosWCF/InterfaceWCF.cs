@@ -60,4 +60,5 @@ namespace MyPhotosWCF
         List<MyPhotos.Model.FileData> GetFilteredFileDatas(Func<MyPhotos.Model.FileData, bool> filter);
 
     }
+
 }

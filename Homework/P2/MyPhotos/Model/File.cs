@@ -3,16 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ServiceModel;
+using System.Runtime.Serialization;
 
 namespace MyPhotos.Model
 {
+    [DataContract(IsReference = true)]
     public class File
     {
-
+        [DataMember]
         public Guid FileId { get; set; }
+        [DataMember]
         public string Name { get; set; }
+        [DataMember]
         public string Path { get; set; }
+        [DataMember]
         public DateTime CreatedAt { get; set; }
+        [DataMember]
         public ICollection<FileData> FileDatas { get; set; }
 
         public File()
