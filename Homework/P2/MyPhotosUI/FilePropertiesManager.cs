@@ -15,7 +15,8 @@ namespace MyPhotosUI
     public partial class FilePropertiesManager : Form
     {
 
-        MyPhotos.Storage.DbService DbService;
+        /*MyPhotos.Storage.DbService DbService;*/
+        InterfaceWCFClient DbService;
         Dashboard Dashboard = null;
         Guid FileId;
         MyPhotos.Model.File File = null;
@@ -26,7 +27,7 @@ namespace MyPhotosUI
         public FilePropertiesManager(Form dashboard, Guid id)
         {
             InitializeComponent();
-            this.DbService = new MyPhotos.Storage.DbService();
+            this.DbService = new InterfaceWCFClient();/*new MyPhotos.Storage.DbService();*/
             this.Dashboard = dashboard as Dashboard;
             this.FileId = id;
             DisplayService_BindList();
@@ -52,7 +53,7 @@ namespace MyPhotosUI
         {
             this.File = DbService.GetFileById(this.FileId);
             this.File.FileDatas = DbService.GetFileDatasByFileId(this.FileId);
-            this.Datas = DbService.GetDatas();
+            this.Datas = DbService.GetDatas().ToList();
         }
 
         private void DisplayService_BindList()
@@ -90,7 +91,7 @@ namespace MyPhotosUI
 
 
                     if (this.File.FileDatas == null) return;
-                    this.properties.RowCount = this.File.FileDatas.Count;
+                    this.properties.RowCount = this.File.FileDatas.Count();
                     this.properties.ColumnCount = 1;
                     this.properties.Controls.Clear();
 

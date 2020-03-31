@@ -201,14 +201,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MyPhotos\MyPhotos.csproj">
-      <Project>{0db2e3cf-5f31-4198-9433-6f3c876d9041}</Project>
-      <Name>MyPhotos</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Asset\nodata_m.png" />
     <Content Include="Asset\nodata_r.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyPhotosHost\MyPhotosHost.csproj">
+      <Project>{b6213e44-5dff-4242-bca8-3bd9b5762316}</Project>
+      <Name>MyPhotosHost</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\MyPhotos\packages\Microsoft.Data.SqlClient.SNI.1.0.19235.1\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\MyPhotos\packages\Microsoft.Data.SqlClient.SNI.1.0.19235.1\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />

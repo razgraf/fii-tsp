@@ -12,13 +12,13 @@ namespace MyPhotosUI
 {
     public partial class PropertiesManager : Form
     {
-        MyPhotos.Storage.DbService DbService;
+        InterfaceWCFClient DbService;
         List<MyPhotos.Model.Data> Datas = new List<MyPhotos.Model.Data> { };
         Dashboard Dashboard = null;
         public PropertiesManager(Form dashboard)
         {
             InitializeComponent();
-            this.DbService = new MyPhotos.Storage.DbService();
+            this.DbService = new InterfaceWCFClient();/* new MyPhotos.Storage.DbService();*/
             this.Dashboard = dashboard as Dashboard;
             DisplayService_BindList();
 
@@ -36,7 +36,7 @@ namespace MyPhotosUI
 
             private void DataService_Load()
         {
-            this.Datas = DbService.GetDatas();
+            this.Datas = DbService.GetDatas().ToList();
         }
 
 

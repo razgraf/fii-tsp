@@ -14,7 +14,9 @@ namespace MyPhotosUI
 {
     public partial class Dashboard : Form
     {
-        MyPhotos.Storage.DbService DbService;
+      /*  MyPhotos.Storage.DbService DbService;*/
+        InterfaceWCFClient DbService;
+        
         List<MyPhotos.Model.File> Files = new List<MyPhotos.Model.File> { };
         List<MyPhotos.Model.Data> Datas = new List<MyPhotos.Model.Data> { };
         public MyPhotos.Model.File FileActive { get; set; } = null;
@@ -25,7 +27,7 @@ namespace MyPhotosUI
         {
 
             InitializeComponent();
-            this.DbService = new MyPhotos.Storage.DbService();
+            this.DbService = new InterfaceWCFClient(); // new MyPhotos.Storage.DbService();
 
             this.panel.Padding = new System.Windows.Forms.Padding(5);
             this.flow.Padding = new System.Windows.Forms.Padding(5);
@@ -50,9 +52,9 @@ namespace MyPhotosUI
         private void DataService_Load()
         {
             if (this.Query == null || this.Query.Length == 0)
-                this.Files = DbService.GetFiles();
-            else this.Files = DbService.GetFilteredFiles(f => f.Name.Contains(this.Query));
-            this.Datas = DbService.GetDatas();
+                this.Files = DbService.GetFiles().ToList();
+            else this.Files = DbService.GetFilteredFiles(f => f.Name.Contains(this.Query)).ToList();
+            this.Datas = DbService.GetDatas().ToList();
         }
 
 
@@ -90,7 +92,7 @@ namespace MyPhotosUI
             {
                 try
                 {
-                    List<MyPhotos.Model.FileData> fileDatas = DbService.GetFileDatasByFileId(this.FileActive.FileId);
+                    List<MyPhotos.Model.FileData> fileDatas = DbService.GetFileDatasByFileId(this.FileActive.FileId).ToList();
                     this.panelPictureBox.Image = new Bitmap(this.FileActive.Path);
 
 

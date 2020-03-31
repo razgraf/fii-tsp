@@ -19,7 +19,7 @@ namespace MyPhotosHost
             Uri baseAddress = new Uri("http://localhost:8080/hello");
 
 
-            using (ServiceHost host = new ServiceHost(typeof(MyPhotosWCF.PhotoWCF), baseAddress))
+            using (ServiceHost host = new ServiceHost(typeof(PhotoWCF), baseAddress))
             {
                 // Enable metadata publishing.
                 ServiceMetadataBehavior smb = new ServiceMetadataBehavior();
