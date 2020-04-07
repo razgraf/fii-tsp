@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.ServiceModel;
 using System.Runtime.Serialization;
 
-namespace MyPhotos.Model
+namespace MyPhotos
 {
     [DataContract(IsReference = true)]
     public class File

@@ -1,5 +1,4 @@
-﻿using MyPhotos.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,11 +11,11 @@ namespace MyPhotosWCF
     public class PhotoWCF : InterfaceWCF
     {
 
-        MyPhotos.Storage.DbService DbService;
+        DbService DbService;
 
         public PhotoWCF()
         {
-            this.DbService = new MyPhotos.Storage.DbService();
+            this.DbService = new DbService();
         }
 
         public Data CreateData(string label, bool isSearchable = true)

@@ -14,12 +14,17 @@ namespace MyPhotosUI
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Dashboard());
+            /*       Application.EnableVisualStyles();
+                   Application.SetCompatibleTextRenderingDefault(false);
+                   Application.Run(new Dashboard());*/
+            /*
+            InterfaceWCFClient client = new InterfaceWCFClient("BasicHttpBinding_InterfaceWCF");*/
+            Service.InterfaceWCFClient client = new Service.InterfaceWCFClient();
 
-            InterfaceWCFClient client = new InterfaceWCFClient();
+            client.GetFiles();
 
+
+            Console.ReadLine();
         }
     }
 }

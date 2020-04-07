@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using MyPhotos.Model;
+using MyPhotos;
 
-namespace MyPhotos.Storage
+namespace MyPhotos
 {
     public class DbService
     {

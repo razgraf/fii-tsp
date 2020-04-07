@@ -1,1 +1,26 @@
 System.InvalidOperationException: 'Could not find default endpoint element that references contract 'InterfaceWCF' in the ServiceModel client configuration section. This might be because no configuration file was found for your application, or because no endpoint element matching this contract could be found in the client element.'
+
+
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.7.2" />
+    </startup>
+</configuration>
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_InterfaceWCF" />
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://localhost:8080/hello" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_InterfaceWCF" contract="InterfaceWCF"
+                name="BasicHttpBinding_InterfaceWCF" />
+        </client>
+    </system.serviceModel>
+</configuration>

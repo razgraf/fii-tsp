@@ -6,20 +6,20 @@ using System.Drawing;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
-
-using MyPhotos.Model;
-
+using MyPhotos;
+using FileIO = System.IO.File;
+using File = MyPhotos.File;
 
 namespace MyPhotosUI
 {
     public partial class Dashboard : Form
     {
-      /*  MyPhotos.Storage.DbService DbService;*/
-        InterfaceWCFClient DbService;
-        
-        List<MyPhotos.Model.File> Files = new List<MyPhotos.Model.File> { };
-        List<MyPhotos.Model.Data> Datas = new List<MyPhotos.Model.Data> { };
-        public MyPhotos.Model.File FileActive { get; set; } = null;
+        /*DbService DbService;*/
+        Service.InterfaceWCFClient DbService;
+
+        List<File> Files = new List<File> { };
+        List<Data> Datas = new List<Data> { };
+        public File FileActive { get; set; } = null;
 
         public string Query = "";
 
@@ -27,7 +27,8 @@ namespace MyPhotosUI
         {
 
             InitializeComponent();
-            this.DbService = new InterfaceWCFClient(); // new MyPhotos.Storage.DbService();
+            this.DbService = new Service.InterfaceWCFClient(); 
+       /*     this.DbService = new DbService();*/
 
             this.panel.Padding = new System.Windows.Forms.Padding(5);
             this.flow.Padding = new System.Windows.Forms.Padding(5);
@@ -92,7 +93,7 @@ namespace MyPhotosUI
             {
                 try
                 {
-                    List<MyPhotos.Model.FileData> fileDatas = DbService.GetFileDatasByFileId(this.FileActive.FileId).ToList();
+                    List<FileData> fileDatas = DbService.GetFileDatasByFileId(this.FileActive.FileId).ToList();
                     this.panelPictureBox.Image = new Bitmap(this.FileActive.Path);
 
 
@@ -112,7 +113,7 @@ namespace MyPhotosUI
 
                     if (this.FileActive.FileDatas != null)
                     {
-                        foreach (MyPhotos.Model.FileData fd in this.FileActive.FileDatas)
+                        foreach (FileData fd in this.FileActive.FileDatas)
                         {
                             ListViewItem item = new ListViewItem(fd.Data.Label);
                             item.SubItems.Add(fd.Value);
@@ -134,7 +135,7 @@ namespace MyPhotosUI
             this.DataService_Load();
             this.list.Items.Clear();
             if (this.Files == null) return;
-            foreach (MyPhotos.Model.File f in this.Files)
+            foreach (File f in this.Files)
             {
                 ListViewItem item = new ListViewItem(f.Name);
                 item.SubItems.Add(f.Path);
@@ -172,14 +173,14 @@ namespace MyPhotosUI
                     try
                     {
                         FileInfo info = new FileInfo(fileName);
-                        MyPhotos.Model.File file = DbService.CreateFile(info.Name, info.FullName);
-                        MyPhotos.Model.Data dataSize = this.Datas.Single(d => d.Label == "size");
+                        File file = DbService.CreateFile(info.Name, info.FullName);
+                        Data dataSize = this.Datas.Single(d => d.Label == "size");
                         if (dataSize != null)
                         {
                             DbService.CreateFileData(file, dataSize, info.Length.ToString());
                         }
 
-                        MyPhotos.Model.Data dataDimension = this.Datas.Single(d => d.Label == "dimension");
+                        Data dataDimension = this.Datas.Single(d => d.Label == "dimension");
                         if (dataDimension != null)
                         {
                             Bitmap placeholder = new Bitmap(fileName);

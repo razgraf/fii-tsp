@@ -1,9 +1,9 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 
-using MyPhotos.Model;
 
-namespace MyPhotos.Storage
+
+namespace MyPhotos
 {
     public class Context : DbContext
     {

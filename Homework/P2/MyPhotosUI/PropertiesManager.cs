@@ -8,17 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using MyPhotos;
+using FileIO = System.IO.File;
+using File = MyPhotos.File;
+
+
 namespace MyPhotosUI
 {
     public partial class PropertiesManager : Form
     {
-        InterfaceWCFClient DbService;
-        List<MyPhotos.Model.Data> Datas = new List<MyPhotos.Model.Data> { };
+        /*        DbService DbService;*/
+        Service.InterfaceWCFClient DbService;
+        List<Data> Datas = new List<Data> { };
         Dashboard Dashboard = null;
         public PropertiesManager(Form dashboard)
         {
             InitializeComponent();
-            this.DbService = new InterfaceWCFClient();/* new MyPhotos.Storage.DbService();*/
+            this.DbService = new Service.InterfaceWCFClient();
+  /*          this.DbService = new DbService();*/
             this.Dashboard = dashboard as Dashboard;
             DisplayService_BindList();
 
@@ -73,7 +80,7 @@ namespace MyPhotosUI
         {
             this.DataService_Load();
             this.list.Items.Clear();
-            foreach (MyPhotos.Model.Data d in this.Datas)
+            foreach (Data d in this.Datas)
             {
                 ListViewItem item = new ListViewItem(d.DataId.ToString());
                 item.SubItems.Add(d.Label);

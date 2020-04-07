@@ -10,24 +10,29 @@ using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
 
+using MyPhotos;
+using FileIO = System.IO.File;
+using File = MyPhotos.File;
+
 namespace MyPhotosUI
 {
     public partial class FilePropertiesManager : Form
     {
 
-        /*MyPhotos.Storage.DbService DbService;*/
-        InterfaceWCFClient DbService;
+        /* DbService DbService;*/
+        Service.InterfaceWCFClient DbService;
         Dashboard Dashboard = null;
         Guid FileId;
-        MyPhotos.Model.File File = null;
-        List<MyPhotos.Model.Data> Datas = new List<MyPhotos.Model.Data> { };
+        File File = null;
+        List<Data> Datas = new List<Data> { };
         bool Changes = false;
 
 
         public FilePropertiesManager(Form dashboard, Guid id)
         {
             InitializeComponent();
-            this.DbService = new InterfaceWCFClient();/*new MyPhotos.Storage.DbService();*/
+            this.DbService = new Service.InterfaceWCFClient();
+    /*        this.DbService = new DbService();*/
             this.Dashboard = dashboard as Dashboard;
             this.FileId = id;
             DisplayService_BindList();
@@ -36,12 +41,6 @@ namespace MyPhotosUI
         private void FilePropertiesManager_FormClosing(Object sender, FormClosingEventArgs e)
         {
             Console.WriteLine("Closing...");
-
-            if(this.Changes)
-            {
-              
-                this.Dashboard.DisplayService_BindPanel();
-            }
 
             this.Dashboard.Query = "";
             this.Dashboard.DisplayService_BindList();
@@ -78,6 +77,7 @@ namespace MyPhotosUI
                 catch (Exception e)
                 {
                     Console.WriteLine(e);
+                    Console.WriteLine("---");
                     this.warning.Text = "Warning: File renamed or location has changed.";
 
                     Image image = Image.FromFile(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "../../Asset/nodata_r.png"));
@@ -97,14 +97,14 @@ namespace MyPhotosUI
 
                     this.properties.RowStyles.Clear();
 
-                    foreach (MyPhotos.Model.Data d in this.Datas)
+                    foreach (Data d in this.Datas)
                     {
                         Label label = new Label();
                         label.Text = d.Label;
 
                         TextBox textBox = new TextBox();
                        
-                        MyPhotos.Model.FileData fileData = this.File.FileDatas.FirstOrDefault(fd => fd.DataId == d.DataId);
+                        FileData fileData = this.File.FileDatas.FirstOrDefault(fd => fd.DataId == d.DataId);
                         if (fileData != null) textBox.Text = fileData.Value;
                         if (!d.IsEditable) textBox.Enabled = false;
 

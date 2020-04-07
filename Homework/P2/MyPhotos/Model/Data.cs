@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
 
-namespace MyPhotos.Model
+namespace MyPhotos
 {
     [DataContract(IsReference = true)]
     public class Data

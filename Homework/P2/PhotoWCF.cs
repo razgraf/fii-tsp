@@ -8,14 +8,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MyPhotos.Model
+namespace MyPhotos
 {
     using System.Runtime.Serialization;
     
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="File", Namespace="http://schemas.datacontract.org/2004/07/MyPhotos.Model", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="File", Namespace="http://schemas.datacontract.org/2004/07/MyPhotos", IsReference=true)]
     public partial class File : object, System.Runtime.Serialization.IExtensibleDataObject
     {
         
@@ -23,7 +23,7 @@ namespace MyPhotos.Model
         
         private System.DateTime CreatedAtField;
         
-        private MyPhotos.Model.FileData[] FileDatasField;
+        private MyPhotos.FileData[] FileDatasField;
         
         private System.Guid FileIdField;
         
@@ -57,7 +57,7 @@ namespace MyPhotos.Model
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public MyPhotos.Model.FileData[] FileDatas
+        public MyPhotos.FileData[] FileDatas
         {
             get
             {
@@ -111,7 +111,7 @@ namespace MyPhotos.Model
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="FileData", Namespace="http://schemas.datacontract.org/2004/07/MyPhotos.Model", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FileData", Namespace="http://schemas.datacontract.org/2004/07/MyPhotos", IsReference=true)]
     public partial class FileData : object, System.Runtime.Serialization.IExtensibleDataObject
     {
         
@@ -119,11 +119,11 @@ namespace MyPhotos.Model
         
         private System.DateTime CreatedAtField;
         
-        private MyPhotos.Model.Data DataField;
+        private MyPhotos.Data DataField;
         
         private System.Guid DataIdField;
         
-        private MyPhotos.Model.File FileField;
+        private MyPhotos.File FileField;
         
         private System.Guid FileDataIdField;
         
@@ -157,7 +157,7 @@ namespace MyPhotos.Model
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public MyPhotos.Model.Data Data
+        public MyPhotos.Data Data
         {
             get
             {
@@ -183,7 +183,7 @@ namespace MyPhotos.Model
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public MyPhotos.Model.File File
+        public MyPhotos.File File
         {
             get
             {
@@ -237,7 +237,7 @@ namespace MyPhotos.Model
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Data", Namespace="http://schemas.datacontract.org/2004/07/MyPhotos.Model", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Data", Namespace="http://schemas.datacontract.org/2004/07/MyPhotos", IsReference=true)]
     public partial class Data : object, System.Runtime.Serialization.IExtensibleDataObject
     {
         
@@ -247,7 +247,7 @@ namespace MyPhotos.Model
         
         private System.Guid DataIdField;
         
-        private MyPhotos.Model.FileData[] FileDatasField;
+        private MyPhotos.FileData[] FileDatasField;
         
         private bool IsEditableField;
         
@@ -298,7 +298,7 @@ namespace MyPhotos.Model
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public MyPhotos.Model.FileData[] FileDatas
+        public MyPhotos.FileData[] FileDatas
         {
             get
             {
@@ -390,22 +390,22 @@ public interface InterfaceWCF
     System.Threading.Tasks.Task UpdateFileDataByFileIdAndLabelAsync(System.Guid fileId, string label, string value);
     
     [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InterfaceWCF/CreateFile", ReplyAction="http://tempuri.org/InterfaceWCF/CreateFileResponse")]
-    MyPhotos.Model.File CreateFile(string name, string path);
+    MyPhotos.File CreateFile(string name, string path);
     
     [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InterfaceWCF/CreateFile", ReplyAction="http://tempuri.org/InterfaceWCF/CreateFileResponse")]
-    System.Threading.Tasks.Task<MyPhotos.Model.File> CreateFileAsync(string name, string path);
+    System.Threading.Tasks.Task<MyPhotos.File> CreateFileAsync(string name, string path);
     
     [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InterfaceWCF/CreateData", ReplyAction="http://tempuri.org/InterfaceWCF/CreateDataResponse")]
-    MyPhotos.Model.Data CreateData(string label, bool isSearchable);
+    MyPhotos.Data CreateData(string label, bool isSearchable);
     
     [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InterfaceWCF/CreateData", ReplyAction="http://tempuri.org/InterfaceWCF/CreateDataResponse")]
-    System.Threading.Tasks.Task<MyPhotos.Model.Data> CreateDataAsync(string label, bool isSearchable);
+    System.Threading.Tasks.Task<MyPhotos.Data> CreateDataAsync(string label, bool isSearchable);
     
     [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InterfaceWCF/CreateFileData", ReplyAction="http://tempuri.org/InterfaceWCF/CreateFileDataResponse")]
-    MyPhotos.Model.FileData CreateFileData(MyPhotos.Model.File file, MyPhotos.Model.Data data, string value);
+    MyPhotos.FileData CreateFileData(MyPhotos.File file, MyPhotos.Data data, string value);
     
     [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InterfaceWCF/CreateFileData", ReplyAction="http://tempuri.org/InterfaceWCF/CreateFileDataResponse")]
-    System.Threading.Tasks.Task<MyPhotos.Model.FileData> CreateFileDataAsync(MyPhotos.Model.File file, MyPhotos.Model.Data data, string value);
+    System.Threading.Tasks.Task<MyPhotos.FileData> CreateFileDataAsync(MyPhotos.File file, MyPhotos.Data data, string value);
     
     [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InterfaceWCF/RemoveFileById", ReplyAction="http://tempuri.org/InterfaceWCF/RemoveFileByIdResponse")]
     void RemoveFileById(System.Guid id);
@@ -420,58 +420,58 @@ public interface InterfaceWCF
     System.Threading.Tasks.Task RemoveDataByIdAsync(System.Guid id);
     
     [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InterfaceWCF/GetFileById", ReplyAction="http://tempuri.org/InterfaceWCF/GetFileByIdResponse")]
-    MyPhotos.Model.File GetFileById(System.Guid id);
+    MyPhotos.File GetFileById(System.Guid id);
     
     [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InterfaceWCF/GetFileById", ReplyAction="http://tempuri.org/InterfaceWCF/GetFileByIdResponse")]
-    System.Threading.Tasks.Task<MyPhotos.Model.File> GetFileByIdAsync(System.Guid id);
+    System.Threading.Tasks.Task<MyPhotos.File> GetFileByIdAsync(System.Guid id);
     
     [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InterfaceWCF/GetDataById", ReplyAction="http://tempuri.org/InterfaceWCF/GetDataByIdResponse")]
-    MyPhotos.Model.Data GetDataById(System.Guid id);
+    MyPhotos.Data GetDataById(System.Guid id);
     
     [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InterfaceWCF/GetDataById", ReplyAction="http://tempuri.org/InterfaceWCF/GetDataByIdResponse")]
-    System.Threading.Tasks.Task<MyPhotos.Model.Data> GetDataByIdAsync(System.Guid id);
+    System.Threading.Tasks.Task<MyPhotos.Data> GetDataByIdAsync(System.Guid id);
     
     [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InterfaceWCF/GetFiles", ReplyAction="http://tempuri.org/InterfaceWCF/GetFilesResponse")]
-    MyPhotos.Model.File[] GetFiles();
+    MyPhotos.File[] GetFiles();
     
     [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InterfaceWCF/GetFiles", ReplyAction="http://tempuri.org/InterfaceWCF/GetFilesResponse")]
-    System.Threading.Tasks.Task<MyPhotos.Model.File[]> GetFilesAsync();
+    System.Threading.Tasks.Task<MyPhotos.File[]> GetFilesAsync();
     
     [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InterfaceWCF/GetDatas", ReplyAction="http://tempuri.org/InterfaceWCF/GetDatasResponse")]
-    MyPhotos.Model.Data[] GetDatas();
+    MyPhotos.Data[] GetDatas();
     
     [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InterfaceWCF/GetDatas", ReplyAction="http://tempuri.org/InterfaceWCF/GetDatasResponse")]
-    System.Threading.Tasks.Task<MyPhotos.Model.Data[]> GetDatasAsync();
+    System.Threading.Tasks.Task<MyPhotos.Data[]> GetDatasAsync();
     
     [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InterfaceWCF/GetFileDatas", ReplyAction="http://tempuri.org/InterfaceWCF/GetFileDatasResponse")]
-    MyPhotos.Model.FileData[] GetFileDatas();
+    MyPhotos.FileData[] GetFileDatas();
     
     [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InterfaceWCF/GetFileDatas", ReplyAction="http://tempuri.org/InterfaceWCF/GetFileDatasResponse")]
-    System.Threading.Tasks.Task<MyPhotos.Model.FileData[]> GetFileDatasAsync();
+    System.Threading.Tasks.Task<MyPhotos.FileData[]> GetFileDatasAsync();
     
     [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InterfaceWCF/GetFileDatasByFileId", ReplyAction="http://tempuri.org/InterfaceWCF/GetFileDatasByFileIdResponse")]
-    MyPhotos.Model.FileData[] GetFileDatasByFileId(System.Guid fileId);
+    MyPhotos.FileData[] GetFileDatasByFileId(System.Guid fileId);
     
     [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InterfaceWCF/GetFileDatasByFileId", ReplyAction="http://tempuri.org/InterfaceWCF/GetFileDatasByFileIdResponse")]
-    System.Threading.Tasks.Task<MyPhotos.Model.FileData[]> GetFileDatasByFileIdAsync(System.Guid fileId);
+    System.Threading.Tasks.Task<MyPhotos.FileData[]> GetFileDatasByFileIdAsync(System.Guid fileId);
     
     [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InterfaceWCF/GetFilteredFiles", ReplyAction="http://tempuri.org/InterfaceWCF/GetFilteredFilesResponse")]
-    MyPhotos.Model.File[] GetFilteredFiles(System.Func<MyPhotos.Model.File, bool> filter);
+    MyPhotos.File[] GetFilteredFiles(System.Func<MyPhotos.File, bool> filter);
     
     [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InterfaceWCF/GetFilteredFiles", ReplyAction="http://tempuri.org/InterfaceWCF/GetFilteredFilesResponse")]
-    System.Threading.Tasks.Task<MyPhotos.Model.File[]> GetFilteredFilesAsync(System.Func<MyPhotos.Model.File, bool> filter);
+    System.Threading.Tasks.Task<MyPhotos.File[]> GetFilteredFilesAsync(System.Func<MyPhotos.File, bool> filter);
     
     [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InterfaceWCF/GetFilteredDatas", ReplyAction="http://tempuri.org/InterfaceWCF/GetFilteredDatasResponse")]
-    MyPhotos.Model.Data[] GetFilteredDatas(System.Func<MyPhotos.Model.Data, bool> filter);
+    MyPhotos.Data[] GetFilteredDatas(System.Func<MyPhotos.Data, bool> filter);
     
     [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InterfaceWCF/GetFilteredDatas", ReplyAction="http://tempuri.org/InterfaceWCF/GetFilteredDatasResponse")]
-    System.Threading.Tasks.Task<MyPhotos.Model.Data[]> GetFilteredDatasAsync(System.Func<MyPhotos.Model.Data, bool> filter);
+    System.Threading.Tasks.Task<MyPhotos.Data[]> GetFilteredDatasAsync(System.Func<MyPhotos.Data, bool> filter);
     
     [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InterfaceWCF/GetFilteredFileDatas", ReplyAction="http://tempuri.org/InterfaceWCF/GetFilteredFileDatasResponse")]
-    MyPhotos.Model.FileData[] GetFilteredFileDatas(System.Func<MyPhotos.Model.FileData, bool> filter);
+    MyPhotos.FileData[] GetFilteredFileDatas(System.Func<MyPhotos.FileData, bool> filter);
     
     [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InterfaceWCF/GetFilteredFileDatas", ReplyAction="http://tempuri.org/InterfaceWCF/GetFilteredFileDatasResponse")]
-    System.Threading.Tasks.Task<MyPhotos.Model.FileData[]> GetFilteredFileDatasAsync(System.Func<MyPhotos.Model.FileData, bool> filter);
+    System.Threading.Tasks.Task<MyPhotos.FileData[]> GetFilteredFileDatasAsync(System.Func<MyPhotos.FileData, bool> filter);
 }
 
 [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -518,32 +518,32 @@ public partial class InterfaceWCFClient : System.ServiceModel.ClientBase<Interfa
         return base.Channel.UpdateFileDataByFileIdAndLabelAsync(fileId, label, value);
     }
     
-    public MyPhotos.Model.File CreateFile(string name, string path)
+    public MyPhotos.File CreateFile(string name, string path)
     {
         return base.Channel.CreateFile(name, path);
     }
     
-    public System.Threading.Tasks.Task<MyPhotos.Model.File> CreateFileAsync(string name, string path)
+    public System.Threading.Tasks.Task<MyPhotos.File> CreateFileAsync(string name, string path)
     {
         return base.Channel.CreateFileAsync(name, path);
     }
     
-    public MyPhotos.Model.Data CreateData(string label, bool isSearchable)
+    public MyPhotos.Data CreateData(string label, bool isSearchable)
     {
         return base.Channel.CreateData(label, isSearchable);
     }
     
-    public System.Threading.Tasks.Task<MyPhotos.Model.Data> CreateDataAsync(string label, bool isSearchable)
+    public System.Threading.Tasks.Task<MyPhotos.Data> CreateDataAsync(string label, bool isSearchable)
     {
         return base.Channel.CreateDataAsync(label, isSearchable);
     }
     
-    public MyPhotos.Model.FileData CreateFileData(MyPhotos.Model.File file, MyPhotos.Model.Data data, string value)
+    public MyPhotos.FileData CreateFileData(MyPhotos.File file, MyPhotos.Data data, string value)
     {
         return base.Channel.CreateFileData(file, data, value);
     }
     
-    public System.Threading.Tasks.Task<MyPhotos.Model.FileData> CreateFileDataAsync(MyPhotos.Model.File file, MyPhotos.Model.Data data, string value)
+    public System.Threading.Tasks.Task<MyPhotos.FileData> CreateFileDataAsync(MyPhotos.File file, MyPhotos.Data data, string value)
     {
         return base.Channel.CreateFileDataAsync(file, data, value);
     }
@@ -568,92 +568,92 @@ public partial class InterfaceWCFClient : System.ServiceModel.ClientBase<Interfa
         return base.Channel.RemoveDataByIdAsync(id);
     }
     
-    public MyPhotos.Model.File GetFileById(System.Guid id)
+    public MyPhotos.File GetFileById(System.Guid id)
     {
         return base.Channel.GetFileById(id);
     }
     
-    public System.Threading.Tasks.Task<MyPhotos.Model.File> GetFileByIdAsync(System.Guid id)
+    public System.Threading.Tasks.Task<MyPhotos.File> GetFileByIdAsync(System.Guid id)
     {
         return base.Channel.GetFileByIdAsync(id);
     }
     
-    public MyPhotos.Model.Data GetDataById(System.Guid id)
+    public MyPhotos.Data GetDataById(System.Guid id)
     {
         return base.Channel.GetDataById(id);
     }
     
-    public System.Threading.Tasks.Task<MyPhotos.Model.Data> GetDataByIdAsync(System.Guid id)
+    public System.Threading.Tasks.Task<MyPhotos.Data> GetDataByIdAsync(System.Guid id)
     {
         return base.Channel.GetDataByIdAsync(id);
     }
     
-    public MyPhotos.Model.File[] GetFiles()
+    public MyPhotos.File[] GetFiles()
     {
         return base.Channel.GetFiles();
     }
     
-    public System.Threading.Tasks.Task<MyPhotos.Model.File[]> GetFilesAsync()
+    public System.Threading.Tasks.Task<MyPhotos.File[]> GetFilesAsync()
     {
         return base.Channel.GetFilesAsync();
     }
     
-    public MyPhotos.Model.Data[] GetDatas()
+    public MyPhotos.Data[] GetDatas()
     {
         return base.Channel.GetDatas();
     }
     
-    public System.Threading.Tasks.Task<MyPhotos.Model.Data[]> GetDatasAsync()
+    public System.Threading.Tasks.Task<MyPhotos.Data[]> GetDatasAsync()
     {
         return base.Channel.GetDatasAsync();
     }
     
-    public MyPhotos.Model.FileData[] GetFileDatas()
+    public MyPhotos.FileData[] GetFileDatas()
     {
         return base.Channel.GetFileDatas();
     }
     
-    public System.Threading.Tasks.Task<MyPhotos.Model.FileData[]> GetFileDatasAsync()
+    public System.Threading.Tasks.Task<MyPhotos.FileData[]> GetFileDatasAsync()
     {
         return base.Channel.GetFileDatasAsync();
     }
     
-    public MyPhotos.Model.FileData[] GetFileDatasByFileId(System.Guid fileId)
+    public MyPhotos.FileData[] GetFileDatasByFileId(System.Guid fileId)
     {
         return base.Channel.GetFileDatasByFileId(fileId);
     }
     
-    public System.Threading.Tasks.Task<MyPhotos.Model.FileData[]> GetFileDatasByFileIdAsync(System.Guid fileId)
+    public System.Threading.Tasks.Task<MyPhotos.FileData[]> GetFileDatasByFileIdAsync(System.Guid fileId)
     {
         return base.Channel.GetFileDatasByFileIdAsync(fileId);
     }
     
-    public MyPhotos.Model.File[] GetFilteredFiles(System.Func<MyPhotos.Model.File, bool> filter)
+    public MyPhotos.File[] GetFilteredFiles(System.Func<MyPhotos.File, bool> filter)
     {
         return base.Channel.GetFilteredFiles(filter);
     }
     
-    public System.Threading.Tasks.Task<MyPhotos.Model.File[]> GetFilteredFilesAsync(System.Func<MyPhotos.Model.File, bool> filter)
+    public System.Threading.Tasks.Task<MyPhotos.File[]> GetFilteredFilesAsync(System.Func<MyPhotos.File, bool> filter)
     {
         return base.Channel.GetFilteredFilesAsync(filter);
     }
     
-    public MyPhotos.Model.Data[] GetFilteredDatas(System.Func<MyPhotos.Model.Data, bool> filter)
+    public MyPhotos.Data[] GetFilteredDatas(System.Func<MyPhotos.Data, bool> filter)
     {
         return base.Channel.GetFilteredDatas(filter);
     }
     
-    public System.Threading.Tasks.Task<MyPhotos.Model.Data[]> GetFilteredDatasAsync(System.Func<MyPhotos.Model.Data, bool> filter)
+    public System.Threading.Tasks.Task<MyPhotos.Data[]> GetFilteredDatasAsync(System.Func<MyPhotos.Data, bool> filter)
     {
         return base.Channel.GetFilteredDatasAsync(filter);
     }
     
-    public MyPhotos.Model.FileData[] GetFilteredFileDatas(System.Func<MyPhotos.Model.FileData, bool> filter)
+    public MyPhotos.FileData[] GetFilteredFileDatas(System.Func<MyPhotos.FileData, bool> filter)
     {
         return base.Channel.GetFilteredFileDatas(filter);
     }
     
-    public System.Threading.Tasks.Task<MyPhotos.Model.FileData[]> GetFilteredFileDatasAsync(System.Func<MyPhotos.Model.FileData, bool> filter)
+    public System.Threading.Tasks.Task<MyPhotos.FileData[]> GetFilteredFileDatasAsync(System.Func<MyPhotos.FileData, bool> filter)
     {
         return base.Channel.GetFilteredFileDatasAsync(filter);
     }
