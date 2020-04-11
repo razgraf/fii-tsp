@@ -17,7 +17,7 @@ namespace MyPhotosUI
 {
     public partial class PropertiesManager : Form
     {
-        /*        DbService DbService;*/
+
         Service.InterfaceWCFClient DbService;
         List<Data> Datas = new List<Data> { };
         Dashboard Dashboard = null;
@@ -25,7 +25,6 @@ namespace MyPhotosUI
         {
             InitializeComponent();
             this.DbService = new Service.InterfaceWCFClient();
-  /*          this.DbService = new DbService();*/
             this.Dashboard = dashboard as Dashboard;
             DisplayService_BindList();
 
@@ -35,8 +34,6 @@ namespace MyPhotosUI
         {
             Console.WriteLine("Closing...");
             this.Dashboard.Query = "";
-            /* this.Dashboard.FileActive = null;
-             this.Dashboard.DisplayService_BindPanel();*/
         }
 
 

@@ -50,7 +50,7 @@ namespace MyPhotosHost
                 Console.WriteLine("The service is ready at {0}", baseAddress);
 
                 foreach (ServiceEndpoint se in host.Description.Endpoints)
-                    Console.WriteLine("A (address): {0} \nB (binding): {1} \nC (Contract): {2}\n", se.Address, se.Binding.Name, se.Contract.Name);
+                    Console.WriteLine("A (address): {0} \nB (binding): {1} \nC (Contract): {2}\nD (Name): {3}\n", se.Address, se.Binding.Name, se.Contract.Name, se.Name);
 
 
                 Console.WriteLine("Press <Enter> to stop the service.");

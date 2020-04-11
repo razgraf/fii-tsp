@@ -3,6 +3,7 @@ using System;
 
 
 
+
 namespace MyPhotos
 {
     public class Context : DbContext

@@ -14,7 +14,7 @@ namespace MyPhotosUI
 {
     public partial class Dashboard : Form
     {
-        /*DbService DbService;*/
+
         Service.InterfaceWCFClient DbService;
 
         List<File> Files = new List<File> { };
@@ -28,7 +28,7 @@ namespace MyPhotosUI
 
             InitializeComponent();
             this.DbService = new Service.InterfaceWCFClient(); 
-       /*     this.DbService = new DbService();*/
+    
 
             this.panel.Padding = new System.Windows.Forms.Padding(5);
             this.flow.Padding = new System.Windows.Forms.Padding(5);
@@ -41,7 +41,6 @@ namespace MyPhotosUI
             this.buttonVideo.Enabled = false;
             this.buttonVideo.BackColor = Color.Gainsboro;
 
-            /*this.DbService.InitDb();*/
 
         }
 
