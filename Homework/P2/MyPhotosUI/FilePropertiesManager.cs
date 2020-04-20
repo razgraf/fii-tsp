@@ -32,7 +32,6 @@ namespace MyPhotosUI
         {
             InitializeComponent();
             this.DbService = new Service.InterfaceWCFClient();
-    /*        this.DbService = new DbService();*/
             this.Dashboard = dashboard as Dashboard;
             this.FileId = id;
             DisplayService_BindList();
