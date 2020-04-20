@@ -14,13 +14,9 @@ namespace MyPhotos
 
             Console.WriteLine("Start");
             DbService dbService = new DbService();
-        /*   dbService.InitDb();*/
+           /* dbService.InitDb();*/
 
-            List<File> files = dbService.GetFiles();
-            foreach (File f in files)
-                Console.WriteLine(f.ToString());
-
-            Console.WriteLine("End");
+        
             Console.ReadKey();
 
         }

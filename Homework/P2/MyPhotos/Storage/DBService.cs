@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Microsoft.EntityFrameworkCore;
 using MyPhotos;
 
 namespace MyPhotos
@@ -73,6 +73,7 @@ namespace MyPhotos
             File file = new File(name, path);
             Context.Add(file);
             Context.SaveChanges();
+            Context.Entry(file).State = EntityState.Added;
             return file;
         }
 
@@ -81,6 +82,7 @@ namespace MyPhotos
             Data data = new Data(label,null,"string", true, isSearchable);
             Context.Add(data);
             Context.SaveChanges();
+            Context.Entry(data).State = EntityState.Added;
             return data;
         }
 
@@ -89,6 +91,7 @@ namespace MyPhotos
             FileData fileData = new FileData(file, data, value);
             Context.Add(fileData);
             Context.SaveChanges();
+            Context.Entry(fileData).State = EntityState.Added;
             return fileData;
         }
 
