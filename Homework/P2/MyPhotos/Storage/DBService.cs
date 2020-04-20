@@ -31,8 +31,8 @@ namespace MyPhotos
 
         public void UpdateFileDataByFileIdAndLabel(Guid fileId, string label, string value)
         {
-           
-            FileData fileData = GetFilteredFileDatas(fd => fd.Data.Label == label && fd.FileId == fileId).FirstOrDefault();
+            var dataWithLabel = Context.Datas.FirstOrDefault(d => d.Label == label);
+            FileData fileData = GetFilteredFileDatas(fd => fd.DataId == dataWithLabel.DataId && fd.FileId == fileId).FirstOrDefault();
             if (fileData != null)
             {
                 Console.WriteLine(value == null || value.Length == 0 ? "Yes" : "No");
@@ -75,7 +75,7 @@ namespace MyPhotos
             Context.SaveChanges();
             File result = this.GetFileById(file.FileId);
 
-            return result;
+            return file;
         }
 
         public Data CreateData(string label, bool isSearchable = true)
@@ -124,7 +124,7 @@ namespace MyPhotos
             File file = this.GetFileById(id);
             if (file == null) return;
 
-            if (file.FileDatas.Count > 0) foreach (FileData fd in file.FileDatas) Context.Remove(fd);
+            //if (file.FileDatas.Count > 0) foreach (FileData fd in file.FileDatas) Context.Remove(fd);
             Context.Remove(file);
             Context.SaveChanges();
         }

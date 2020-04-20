@@ -176,14 +176,16 @@ namespace MyPhotosUI
                         FileInfo info = new FileInfo(fileName);
                         File file = DbService.CreateFile(info.Name, info.FullName);
 
+
                         // Data dataSize = this.Datas.FirstOrDefault(d => d.Label == "size");
-                        Data dataSize = DbService.GetDatas().ToList().FirstOrDefault(d => d.Label == "size");
+                        // var data = DbService.GetDatas().ToList();
+                        Data dataSize = DbService.GetDatas().FirstOrDefault(d => d.Label == "size");
                         if (dataSize != null)
                         {
                             DbService.CreateFileData(file, dataSize, info.Length.ToString());
                         }
 
-                        Data dataDimension = DbService.GetDatas().ToList().FirstOrDefault(d => d.Label == "dimension");
+                        Data dataDimension = DbService.GetDatas().FirstOrDefault(d => d.Label == "dimension");
                         if (dataDimension != null)
                         {
                             Bitmap placeholder = new Bitmap(fileName);
