@@ -73,8 +73,9 @@ namespace MyPhotos
             File file = new File(name, path);
             Context.Add(file);
             Context.SaveChanges();
-            Context.Entry(file).State = EntityState.Added;
-            return file;
+            File result = this.GetFileById(file.FileId);
+
+            return result;
         }
 
         public Data CreateData(string label, bool isSearchable = true)
@@ -82,16 +83,37 @@ namespace MyPhotos
             Data data = new Data(label,null,"string", true, isSearchable);
             Context.Add(data);
             Context.SaveChanges();
-            Context.Entry(data).State = EntityState.Added;
-            return data;
+
+            Data result = this.GetDataById(data.DataId);
+
+            return result;
         }
 
         public FileData CreateFileData(File file, Data data, string value)
         {
-            FileData fileData = new FileData(file, data, value);
+            //FileData fileData = new FileData(file, data, value);
+            //this.File = file;
+            //this.Data = data;
+            //this.Value = value;
+            FileData fileData = new FileData();
+            fileData.Value = value;
+            if (Context.Files.Any(f => f.FileId == file.FileId))
+            {
+                fileData.FileId = file.FileId;
+            } else
+            {
+                fileData.File = file;
+            }
+            if (Context.Datas.Any(f => f.DataId == data.DataId))
+            {
+                fileData.DataId = data.DataId;
+            }
+            else
+            {
+                fileData.Data = data;
+            }
             Context.Add(fileData);
             Context.SaveChanges();
-            Context.Entry(fileData).State = EntityState.Added;
             return fileData;
         }
 

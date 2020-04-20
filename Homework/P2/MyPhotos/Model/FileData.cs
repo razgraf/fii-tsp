@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MyPhotos
 {
@@ -13,6 +14,7 @@ namespace MyPhotos
         [DataMember]
         public Guid FileDataId { get; set; }
         [DataMember]
+        [ForeignKey("File")]
         public Guid FileId { get; set; }
         [DataMember]
         public Guid DataId { get; set; }

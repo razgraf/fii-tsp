@@ -18,7 +18,7 @@ namespace MyPhotosUI
         Service.InterfaceWCFClient DbService;
 
         List<File> Files = new List<File> { };
-        List<Data> Datas = new List<Data> { };
+       // List<Data> Datas = new List<Data> { };
         public File FileActive { get; set; } = null;
 
         public string Query = "";
@@ -54,7 +54,7 @@ namespace MyPhotosUI
             if (this.Query == null || this.Query.Length == 0)
                 this.Files = DbService.GetFiles().ToList();
             else this.Files = DbService.GetFilteredFiles(f => f.Name.Contains(this.Query)).ToList();
-            this.Datas = DbService.GetDatas().ToList();
+           // this.Datas = DbService.GetDatas().ToList();
         }
 
 
@@ -69,6 +69,7 @@ namespace MyPhotosUI
                     if (item.Bounds.Contains(e.Location))
                     {
                         this.FileActive = Files[i];
+                        Console.WriteLine(this.FileActive != null ? this.FileActive.ToString() : "FileActive: null");
                         DisplayService_BindPanel();
 
                     }
@@ -90,11 +91,11 @@ namespace MyPhotosUI
             }
             else
             {
+                List<FileData> fileDatas = new List<FileData> { };
                 try
                 {
-                    List<FileData> fileDatas = DbService.GetFileDatasByFileId(this.FileActive.FileId).ToList();
+                    fileDatas = DbService.GetFileDatasByFileId(this.FileActive.FileId).ToList();
                     this.panelPictureBox.Image = new Bitmap(this.FileActive.Path);
-
 
                 }
                 catch(Exception e)
@@ -110,11 +111,12 @@ namespace MyPhotosUI
                 {
                  
 
-                    if (this.FileActive.FileDatas != null)
+                    if (fileDatas != null && fileDatas.Count > 0)
                     {
-                        foreach (FileData fd in this.FileActive.FileDatas)
+                        foreach (FileData fd in fileDatas)
                         {
-                            ListViewItem item = new ListViewItem(fd.Data.Label);
+                            var data = DbService.GetDataById(fd.DataId);
+                            ListViewItem item = new ListViewItem(data.Label);
                             item.SubItems.Add(fd.Value);
                             this.properties.Items.Add(item);
                         }
@@ -173,13 +175,15 @@ namespace MyPhotosUI
                     {
                         FileInfo info = new FileInfo(fileName);
                         File file = DbService.CreateFile(info.Name, info.FullName);
-                        Data dataSize = this.Datas.Single(d => d.Label == "size");
+
+                        // Data dataSize = this.Datas.FirstOrDefault(d => d.Label == "size");
+                        Data dataSize = DbService.GetDatas().ToList().FirstOrDefault(d => d.Label == "size");
                         if (dataSize != null)
                         {
                             DbService.CreateFileData(file, dataSize, info.Length.ToString());
                         }
 
-                        Data dataDimension = this.Datas.Single(d => d.Label == "dimension");
+                        Data dataDimension = DbService.GetDatas().ToList().FirstOrDefault(d => d.Label == "dimension");
                         if (dataDimension != null)
                         {
                             Bitmap placeholder = new Bitmap(fileName);
