@@ -12,7 +12,17 @@ namespace GrpcService
     {
         public static void Main(string[] args)
         {
+
+            DbService dbs = new DbService();
+            List<Post> posts = dbs.GetPosts();
+            foreach (Post p in posts)
+                Console.WriteLine(p.ToString());
+
+
             CreateHostBuilder(args).Build().Run();
+
+
+       
         }
 
         // Additional configuration is required to successfully run gRPC on macOS.
