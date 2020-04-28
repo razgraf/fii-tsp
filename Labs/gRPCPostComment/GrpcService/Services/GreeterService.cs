@@ -22,5 +22,16 @@ namespace GrpcService
                 Message = "Hello " + request.Name
             });
         }
+
+        public override Task<ResultString> GetFirstPostDescription(EmptyRequest request, ServerCallContext context)
+        {
+
+            DbService dbs = new DbService();
+
+            return Task.FromResult(new ResultString
+            {
+                Message = dbs.GetPosts()[0].Description
+            });
+        }
     }
 }
