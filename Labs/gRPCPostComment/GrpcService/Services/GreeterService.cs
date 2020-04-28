@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
 using Microsoft.Extensions.Logging;
 
@@ -32,6 +33,26 @@ namespace GrpcService
             {
                 Message = dbs.GetPosts()[0].Description
             });
+        }
+
+        public override Task<ResultPosts> GetAllPosts(EmptyRequest request, ServerCallContext context)
+        {
+
+            DbService dbs = new DbService();
+
+            var result = new ResultPosts();
+
+            List<Post> posts = dbs.GetPosts();
+            foreach(Post p in posts)
+            {
+                result.Message.Add(new PostModel{
+                    PostId = p.PostId.ToString(),
+                    Description = p.Description,
+                    Domain = p.Domain
+                });
+            }
+
+            return Task.FromResult(result);
         }
     }
 }
