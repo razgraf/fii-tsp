@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PostComment" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8080/PC?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8080/PC?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8080/PC?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCFPostComment" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPostComment_AddPost_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPost" />
+  </wsdl:message>
+  <wsdl:message name="IPostComment_AddPost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPostResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostComment_UpdatePost_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePost" />
+  </wsdl:message>
+  <wsdl:message name="IPostComment_UpdatePost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePostResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostComment_DeletePost_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePost" />
+  </wsdl:message>
+  <wsdl:message name="IPostComment_DeletePost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePostResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostComment_GetPostById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostById" />
+  </wsdl:message>
+  <wsdl:message name="IPostComment_GetPostById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostComment_GetPosts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPosts" />
+  </wsdl:message>
+  <wsdl:message name="IPostComment_GetPosts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostComment_AddComment_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddComment" />
+  </wsdl:message>
+  <wsdl:message name="IPostComment_AddComment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostComment_UpdateComment_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateComment" />
+  </wsdl:message>
+  <wsdl:message name="IPostComment_UpdateComment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPostComment_GetCommentById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCommentById" />
+  </wsdl:message>
+  <wsdl:message name="IPostComment_GetCommentById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCommentByIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPostComment">
+    <wsdl:operation name="AddPost">
+      <wsdl:input wsam:Action="http://tempuri.org/InterfacePost/AddPost" message="tns:IPostComment_AddPost_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/InterfacePost/AddPostResponse" message="tns:IPostComment_AddPost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePost">
+      <wsdl:input wsam:Action="http://tempuri.org/InterfacePost/UpdatePost" message="tns:IPostComment_UpdatePost_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/InterfacePost/UpdatePostResponse" message="tns:IPostComment_UpdatePost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePost">
+      <wsdl:input wsam:Action="http://tempuri.org/InterfacePost/DeletePost" message="tns:IPostComment_DeletePost_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/InterfacePost/DeletePostResponse" message="tns:IPostComment_DeletePost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPostById">
+      <wsdl:input wsam:Action="http://tempuri.org/InterfacePost/GetPostById" message="tns:IPostComment_GetPostById_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/InterfacePost/GetPostByIdResponse" message="tns:IPostComment_GetPostById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPosts">
+      <wsdl:input wsam:Action="http://tempuri.org/InterfacePost/GetPosts" message="tns:IPostComment_GetPosts_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/InterfacePost/GetPostsResponse" message="tns:IPostComment_GetPosts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddComment">
+      <wsdl:input wsam:Action="http://tempuri.org/InterfaceComment/AddComment" message="tns:IPostComment_AddComment_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/InterfaceComment/AddCommentResponse" message="tns:IPostComment_AddComment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateComment">
+      <wsdl:input wsam:Action="http://tempuri.org/InterfaceComment/UpdateComment" message="tns:IPostComment_UpdateComment_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/InterfaceComment/UpdateCommentResponse" message="tns:IPostComment_UpdateComment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCommentById">
+      <wsdl:input wsam:Action="http://tempuri.org/InterfaceComment/GetCommentById" message="tns:IPostComment_GetCommentById_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/InterfaceComment/GetCommentByIdResponse" message="tns:IPostComment_GetCommentById_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IPostComment" type="tns:IPostComment">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddPost">
+      <soap:operation soapAction="http://tempuri.org/InterfacePost/AddPost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePost">
+      <soap:operation soapAction="http://tempuri.org/InterfacePost/UpdatePost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePost">
+      <soap:operation soapAction="http://tempuri.org/InterfacePost/DeletePost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPostById">
+      <soap:operation soapAction="http://tempuri.org/InterfacePost/GetPostById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPosts">
+      <soap:operation soapAction="http://tempuri.org/InterfacePost/GetPosts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddComment">
+      <soap:operation soapAction="http://tempuri.org/InterfaceComment/AddComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateComment">
+      <soap:operation soapAction="http://tempuri.org/InterfaceComment/UpdateComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCommentById">
+      <soap:operation soapAction="http://tempuri.org/InterfaceComment/GetCommentById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PostComment">
+    <wsdl:port name="BasicHttpBinding_IPostComment" binding="tns:BasicHttpBinding_IPostComment">
+      <soap:address location="http://localhost:8080/PC" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
