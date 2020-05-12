@@ -16,8 +16,4 @@
     <WCFMetadata Include="Connected Services" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Pages\Comments\" />
-  </ItemGroup>
-
 </Project>
