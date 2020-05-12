@@ -16,6 +16,7 @@ namespace WebAppPostComment.Pages.Posts
         public IndexModel() { Posts = new List<PostDTO>(); }
         public async Task OnGetAsync()
         {
+
             var posts = await pcc.GetPostsAsync(); foreach (var item in posts)
             {
                 PostDTO pd = new PostDTO();
