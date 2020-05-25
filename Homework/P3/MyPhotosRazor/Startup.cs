@@ -51,6 +51,20 @@ namespace MyPhotosRazor
             {
                 endpoints.MapRazorPages();
             });
+
+
+            Test();
+
+
+
+        }
+
+        public async void Test()
+        {
+            ServiceFresh.InterfaceWCFClient client = new ServiceFresh.InterfaceWCFClient();
+            List<ServiceFresh.File> files = await client.GetFilesAsync();
+            foreach (ServiceFresh.File f in files)
+                Console.WriteLine(f.Name);
         }
     }
 }

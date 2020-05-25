@@ -18,6 +18,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPhotosHost", "..\MyPhotos
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPhotosRazor", "..\MyPhotosRazor\MyPhotosRazor.csproj", "{0B501729-42EC-4719-AF8A-CB94F4C86C42}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreshHost", "..\FreshHost\FreshHost.csproj", "{3A06549D-063C-4319-8134-4C20ACDEE2A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreshWCF", "..\FreshWCF\FreshWCF.csproj", "{F2BBBA14-1ECF-4751-B4C4-AD75CF457569}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +48,14 @@ Global
 		{0B501729-42EC-4719-AF8A-CB94F4C86C42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B501729-42EC-4719-AF8A-CB94F4C86C42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B501729-42EC-4719-AF8A-CB94F4C86C42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A06549D-063C-4319-8134-4C20ACDEE2A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A06549D-063C-4319-8134-4C20ACDEE2A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A06549D-063C-4319-8134-4C20ACDEE2A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A06549D-063C-4319-8134-4C20ACDEE2A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2BBBA14-1ECF-4751-B4C4-AD75CF457569}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2BBBA14-1ECF-4751-B4C4-AD75CF457569}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2BBBA14-1ECF-4751-B4C4-AD75CF457569}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2BBBA14-1ECF-4751-B4C4-AD75CF457569}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
