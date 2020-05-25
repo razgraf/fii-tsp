@@ -12,9 +12,9 @@ namespace MyPhotosRazor.Pages.FileData
         ServiceFresh.InterfaceWCFClient client = new ServiceFresh.InterfaceWCFClient();
         public List<Models.FileDataDTO> FileDatas { get; set; }
         public IndexModel() { FileDatas = new List<Models.FileDataDTO>(); }
-        public async Task OnGetAsync(string? id)
+        public async Task OnGetAsync(string id)
         {
-            if (id == null) RedirectToPage("../File/Index");
+            if (id == null) return; // RedirectToPage("../File/Index");
 
             string x = id != null ? id : "";
 

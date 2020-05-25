@@ -23,7 +23,7 @@ namespace MyPhotosRazor.Models
         public FileDataDTO(ServiceFresh.FileData rel)
         {
             this.FileDataId = rel.FileDataId;
-            this.FileId = rel.FileDataId;
+            this.FileId = rel.FileId;
             this.DataId = rel.DataId;
             this.Value = rel.Value;
             this.CreatedAt = rel.CreatedAt;

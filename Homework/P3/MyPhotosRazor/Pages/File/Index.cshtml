@@ -1,10 +1,16 @@
-﻿@page
+﻿@page "{searchString?}"
 @model MyPhotosRazor.Pages.File.IndexModel
 @{
     ViewData["Title"] = "Index";
 }
 
 <h1>Files</h1>
+<form>
+    <p>
+        Title: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>
@@ -24,7 +30,7 @@
                 <td>@Html.DisplayFor(modelItem => item.Path)</td>
                 <td>@Html.DisplayFor(modelItem => item.CreatedAt)</td>
                 <td>
-                    <a asp-page="./FileData" asp-route-id="@item.FileId">View file data</a>
+                    <a asp-page="../FileData/Index" asp-route-id="@item.FileId">View file data</a>
                 </td>
             </tr>
         }
