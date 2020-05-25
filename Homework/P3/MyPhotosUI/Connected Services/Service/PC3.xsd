@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/MyPhotos" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MyPhotos" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8080/PC?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="File">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FileDatas" nillable="true" type="tns:ArrayOfFileData" />
+      <xs:element minOccurs="0" name="FileId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Path" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="File" nillable="true" type="tns:File" />
+  <xs:complexType name="ArrayOfFileData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FileData" nillable="true" type="tns:FileData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFileData" nillable="true" type="tns:ArrayOfFileData" />
+  <xs:complexType name="FileData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Data" nillable="true" type="tns:Data" />
+      <xs:element minOccurs="0" name="DataId" type="ser:guid" />
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:File" />
+      <xs:element minOccurs="0" name="FileDataId" type="ser:guid" />
+      <xs:element minOccurs="0" name="FileId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="FileData" nillable="true" type="tns:FileData" />
+  <xs:complexType name="Data">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataId" type="ser:guid" />
+      <xs:element minOccurs="0" name="FileDatas" nillable="true" type="tns:ArrayOfFileData" />
+      <xs:element minOccurs="0" name="IsEditable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSearchable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Label" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Data" nillable="true" type="tns:Data" />
+  <xs:complexType name="ArrayOfFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="File" nillable="true" type="tns:File" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFile" nillable="true" type="tns:ArrayOfFile" />
+  <xs:complexType name="ArrayOfData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Data" nillable="true" type="tns:Data" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfData" nillable="true" type="tns:ArrayOfData" />
+</xs:schema>

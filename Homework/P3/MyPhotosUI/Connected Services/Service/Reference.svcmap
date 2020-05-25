@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="92029ce5-c02b-4dd8-a041-d35ce4a92150" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/PC" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PC.xsd" MetadataType="Schema" ID="900437c2-d211-4121-acce-d42aa4d5857d" SourceId="1" SourceUrl="http://localhost:8080/PC?xsd=xsd1" />
+    <MetadataFile FileName="PC1.xsd" MetadataType="Schema" ID="9ed1d4db-5bf9-401c-9198-d16627698e65" SourceId="1" SourceUrl="http://localhost:8080/PC?xsd=xsd0" />
+    <MetadataFile FileName="PC2.xsd" MetadataType="Schema" ID="caf0d324-b4fc-483e-90fe-85a19eba1784" SourceId="1" SourceUrl="http://localhost:8080/PC?xsd=xsd3" />
+    <MetadataFile FileName="PC3.xsd" MetadataType="Schema" ID="6fddd382-70c6-4d4f-862e-b01e299f3a9e" SourceId="1" SourceUrl="http://localhost:8080/PC?xsd=xsd2" />
+    <MetadataFile FileName="PhotoWCF.wsdl" MetadataType="Wsdl" ID="41f46be8-5294-47ec-9b7d-7889fd2a15ac" SourceId="1" SourceUrl="http://localhost:8080/PC?wsdl" />
+    <MetadataFile FileName="PC.disco" MetadataType="Disco" ID="8c5ecc05-fbaf-4b77-b438-4a37108e3ede" SourceId="1" SourceUrl="http://localhost:8080/PC?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
