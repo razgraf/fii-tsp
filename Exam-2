@@ -1,0 +1,35 @@
+Apostu Razvan Ma14 (III A5)
+
+R1. Aplicatiile pe baza de utilizator (mai ales cele care depind de securitate) se folosesc de mecanisme de transfer al informatiei precum sesiunea, sau cookie-urile. Sunt salvate spre exemplu token-ul de acces, care in cadrul unu request este trimis la server pentru autorizare. Astfel, aplicatia poate identifica utilizatorul si ii poate oferi informatia daca are drepturile necesare.
+R2. 
+
+service Greeter {
+  rpc GetInfo (GetInfoRequest) returns (GetInfoReply);
+}
+
+message GetInfoRequest {
+  string word = 1;
+  int32 percent = 2;
+}
+
+message GetInfoReply {
+    string message = 1;
+}
+
+
+R3. Accesul la WCF se face cu un lifetime "Scoped". In momentul in care un user doreste sa acceseze baza de date, se creaza un obiect "DbService" (implementat de mine) care va stabili conexiunea la baza de date. Orice apel la baza de date din cadrul request-ului se va face cu acel serviciu, urmand ca pentru un nou request, el sa fie instantiat din nou.
+R4. Prima metoda va inspecta toate obiectele pe care le are in grija pentru a vedea exact ce s-a modificat. La a doua metoda, specificam exact obiectul care a fost modificat, pentru a scuti EF-ul de un query in plus peste datele aduse din context.
+R5. Blocarea se face cat timp exista acces deschis la obiectele stocate. Blocarea se realizeaza cu ajutorul unui fisier .lock care previne mutarea datelor cat timp este activ.
+R6. 
+a. rpc Foo(stream FooRequest) returns(stream FooResponse);
+b. Schemele de transport WCF recunoscute pe toate platformele (nu doar Microsoft .net): HTTP, TCP
+
+R7.
+
+R8. 
+Nu pot exista si OnGet si OnGetAsync in aceeasi pagina (sunt aceeasi functie, diferenta e la nume). In schimb pot exista post si get in aceeasi implementare, deoarece sunt tratate ca endpoint-uri diferite.
+Metodele cu tip GET au rolul de a "extrage" informatia (sunt cache-uite de browser, nu ar trebui sa contina body etc.).
+Metodele cu tip POST au rolul de a crea informatie in baza de date.
+
+R9. Prin fisierul .proto.
+R10. DTO-uri
